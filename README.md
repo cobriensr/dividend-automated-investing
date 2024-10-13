@@ -18,7 +18,9 @@ This application is an AWS-hosted dividend investing automation tool designed to
 
 ## Architecture
 
-[Placeholder for Lucidchart diagram]
+![Architecture Diagram](app/static/architecture_diagram.png)
+
+The above diagram illustrates the overall architecture of our Dividend Investing Automation Application. It shows the flow of data from user input through various AWS services and how different components interact.
 
 ### Backend
 
@@ -51,7 +53,7 @@ This application is an AWS-hosted dividend investing automation tool designed to
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/dividend-investing-automation.git
+   git clone https://github.com/cobriensr/dividend-investing-automation.git
    cd dividend-investing-automation
    ```
 
