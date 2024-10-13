@@ -25,6 +25,7 @@ The above diagram illustrates the overall architecture of our Dividend Investing
 ### Backend
 
 - **Framework**: Flask
+- **Language**: Python
 - **ORM**: SQLAlchemy
 - **Database**: AWS Aurora PostgreSQL
 - **File Processing**: pandas
