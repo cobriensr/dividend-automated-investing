@@ -5,17 +5,22 @@ FROM python:3.11
 WORKDIR /app
 
 # Install Node.js and npm
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copy the current directory contents into the container
-COPY . /app
+# Copy the Python requirements file into the container
+COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the rest of the application code
+COPY . .
+
 # Install React dependencies and build the app
-WORKDIR /app/frontend
+WORKDIR /app/frontend/automated-dividend-investing
 RUN npm install
 RUN npm run build
 
@@ -25,5 +30,5 @@ WORKDIR /app
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Run Gunicorn when the container launches
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
