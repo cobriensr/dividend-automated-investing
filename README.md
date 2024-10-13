@@ -48,6 +48,10 @@ The above diagram illustrates the overall architecture of our Dividend Investing
 - **Infrastructure as Code**: Terraform
 - **Containerization**: Docker
 
+## Trello Board
+
+[Trello Board](https://trello.com/invite/b/670c16ca5028297ed761f6e2/ATTIa53315db854e649a568539e0e08d28455EED5C99/dividend-automation-application)
+
 ## Setup and Installation
 
 1. Clone the repository:
