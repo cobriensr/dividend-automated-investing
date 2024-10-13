@@ -152,7 +152,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 - [Flask](https://flask.palletsprojects.com/)
-- [React](https://react.dev/))
+- [React](https://react.dev/)
 - [Next](https://nextjs.org/)
 - [pandas](https://pandas.pydata.org/)
 - [SQLAlchemy](https://www.sqlalchemy.org/)
