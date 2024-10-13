@@ -2,14 +2,14 @@
 
 ## Overview
 
-This application is an AWS-hosted dividend investing automation tool designed to analyze stock data, provide investment recommendations, and visualize results. It combines a Flask backend with a Plotly Dash frontend to offer a powerful, user-friendly interface for dividend investors.
+This application is an AWS-hosted dividend investing automation tool designed to analyze stock data, provide investment recommendations, and visualize results. It combines a Python Flask backend with a NextJS React with Typescript frontend to offer a powerful, user-friendly interface for dividend investors.
 
 ## Features
 
 - File upload (CSV/Excel) for stock data analysis
 - Automated data parsing and criteria application using pandas
 - Results storage in AWS Aurora PostgreSQL database
-- Interactive dashboard with Plotly Dash
+- Interactive dashboard with React
 - Historical data comparison for buy/sell recommendations
 - AWS S3 integration for file storage
 - Containerized deployment on AWS ECS
@@ -31,7 +31,8 @@ The above diagram illustrates the overall architecture of our Dividend Investing
 
 ### Frontend
 
-- **Dashboard**: Plotly Dash
+- **Dashboard**: NextJS - React
+- **Language**: Typescript
 
 ### Infrastructure
 
