@@ -1,3 +1,75 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "jsx-a11y",
+    "jsdoc",
+    "import",
+    "security"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "eqeqeq": ["error", "always"],
+    "curly": ["error", "all"],
+    "prefer-const": "error",
+    "no-var": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "jsx-a11y/anchor-is-valid": "error",
+    "no-unused-expressions": "error",
+    "no-shadow": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "import/order": ["error", {"groups": ["builtin", "external", "internal"]}],
+    "security/detect-object-injection": "warn",
+    "security/detect-non-literal-fs-filename": "warn",
+    "security/detect-unsafe-regex": "error",
+    "security/detect-buffer-noassert": "error",
+    "security/detect-eval-with-expression": "error",
+    "security/detect-no-csrf-before-method-override": "error",
+    "security/detect-possible-timing-attacks": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "root": true,
+  "overrides": [
+    {
+      "files": ["src/app/api/**/route.ts"],
+      "plugins": ["jsdoc"],
+      "rules": {
+        "jsdoc/require-jsdoc": ["error", {
+          "require": {
+            "ArrowFunctionExpression": true
+          },
+          "publicOnly": true,
+          "exemptEmptyFunctions": false,
+          "checkGetters": false,
+          "checkSetters": false
+        }],
+        "jsdoc/require-description": ["error", {
+          "contexts": [
+            {
+              "comment": "/**\\n\\s*@swagger\\n\\s*/",
+              "context": "ArrowFunctionExpression"
+            }
+          ],
+          "descriptionStyle": "body"
+        }]
+      }
+    }
+  ]
 }
