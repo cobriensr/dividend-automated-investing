@@ -9,7 +9,7 @@ wsgi_app = "wsgi:app"
 bind = "0.0.0.0:5001"
 
 # Worker Options
-workers = multiprocessing.cpu_count() * 2 + 1
+workers = multiprocessing.cpu_count()
 worker_class = "gevent"
 
 # Logging Options
