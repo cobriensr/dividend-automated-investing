@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress": "cypress open",
-    "test:security": "playwright test --config=playwright.config.ts tests/security.spec.ts",
+    "test:security": "playwright test --config=playwright.config.ts",
     "setup-playwright": "npx playwright install --dry-run || npx playwright install --install-with-deps"
   },
   "dependencies": {

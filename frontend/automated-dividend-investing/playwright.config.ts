@@ -13,7 +13,7 @@ const config: PlaywrightTestConfig = {
   reporter: "html",
   use: {
     actionTimeout: 0,
-    baseURL: "http://localhost:8080",
+    baseURL: "http://localhost:5001",
     trace: "on-first-retry",
   },
   projects: [
@@ -26,7 +26,7 @@ const config: PlaywrightTestConfig = {
   ],
   webServer: {
     command: "npm run start:test",
-    url: "http://localhost:8080",
+    url: "http://localhost:5001",
     timeout: 180 * 2000,
     reuseExistingServer: !process.env.CI,
     stdout: "pipe",
