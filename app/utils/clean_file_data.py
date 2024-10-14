@@ -185,6 +185,61 @@ def clean_and_save_file(file, upload_folder):
                 df['IRR'] = (df['EPS'] / df['Current Price']) * 100
                 df['IRR Greater than T-Bond'] = df['IRR'] > tbond_rate
                 
+                # Move "IRR" to the ninth position
+                if "IRR" in df.columns:
+                    irr_col = df.pop("IRR")
+                    df.insert(9, "IRR", irr_col)
+                else:
+                    print("Warning: 'IRR' column not found")
+                
+                # Move "IRR Greater than T-Bond" to the tenth position
+                if "IRR Greater than T-Bond" in df.columns:
+                    irr_greater_than_tbond_col = df.pop("IRR Greater than T-Bond")
+                    df.insert(10, "IRR Greater than T-Bond", irr_greater_than_tbond_col)
+                else:
+                    print("Warning: 'IRR Greater than T-Bond' column not found")
+                
+                # create new column for PE Less Than Half EPS Growth Rate
+                df['PE Less Half EPS Growth Rate'] = df['P/E'] < (df['EPS 1Y'] / 2)
+                
+                # Move "PE Less Half EPS Growth Rate" to the eleventh position
+                if "PE Less Half EPS Growth Rate" in df.columns:
+                    pe_less_half_eps_growth_rate_col = df.pop("PE Less Half EPS Growth Rate")
+                    df.insert(11, "PE Less Half EPS Growth Rate", pe_less_half_eps_growth_rate_col)
+                else:
+                    print("Warning: 'PE Less Half EPS Growth Rate' column not found")
+                
+                # create new column for "Growth Plus Yield By PE Less Than 2"
+                # ((EPS 1Y + Div Yield) / P/E) > 2
+                df['Growth Plus Yield By PE Less Than 2'] = ((df['EPS 1Y'] + df['Div Yield']) / df['P/E']) > 2
+                
+                # Move "Growth Plus Yield By PE Less Than 2" to the twelfth position
+                if "Growth Plus Yield By PE Less Than 2" in df.columns:
+                    growth_plus_yield_by_pe_less_than_2_col = df.pop("Growth Plus Yield By PE Less Than 2")
+                    df.insert(12, "Growth Plus Yield By PE Less Than 2", growth_plus_yield_by_pe_less_than_2_col)
+                else:
+                    print("Warning: 'Growth Plus Yield By PE Less Than 2' column not found")
+                
+                # create new column for "Price to Cash Flow"
+                df['Price to Cash Flow'] = df['Current Price'] / df['CF/Share']
+                
+                # Move "Price to Cash Flow" to the thirteenth position
+                if "Price to Cash Flow" in df.columns:
+                    price_to_cash_flow_col = df.pop("Price to Cash Flow")
+                    df.insert(13, "Price to Cash Flow", price_to_cash_flow_col)
+                else:
+                    print("Warning: 'Price to Cash Flow' column not found")
+                
+                # create new colume for "PCF Ratio Less Than 10"
+                df['PCF Ratio Less Than 10'] = df['Price to Cash Flow'] < 10
+                
+                # Move "PCF Ratio Less Than 10" to the fourteenth position
+                if "PCF Ratio Less Than 10" in df.columns:
+                    pcf_ratio_less_than_10_col = df.pop("PCF Ratio Less Than 10")
+                    df.insert(14, "PCF Ratio Less Than 10", pcf_ratio_less_than_10_col)
+                else:
+                    print("Warning: 'PCF Ratio Less Than 10' column not found")
+                
                 # Convert main data to list of OrderedDicts, passing the Excel file path
                 main_data = dataframe_to_custom_json(df)
                 
