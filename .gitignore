@@ -177,3 +177,8 @@ yarn-error.log
 # Misc
 *.swp
 *.swo
+
+# Excel files
+*.csv
+*.xls
+*.xlsx
