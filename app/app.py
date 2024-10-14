@@ -1,4 +1,4 @@
-# pylint: disable=missing-module-docstring, missing-function-docstring, missing-class-docstring, missing-final-newline, trailing-whitespace
+# pylint: disable=missing-module-docstring, missing-function-docstring, missing-class-docstring, missing-final-newline, trailing-whitespace, line-too-long
 import os
 from flask import Flask, send_from_directory
 from flask_cors import CORS
@@ -10,8 +10,14 @@ project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def create_app():
     flask_app = Flask(__name__, static_folder=os.path.join(project_root, 'frontend', 'automated-dividend-investing', 'out'))
     CORS(flask_app)
+    
+    # Configure upload folder
+    flask_app.config['UPLOAD_FOLDER'] = os.path.join(project_root, 'uploads')
+    if not os.path.exists(flask_app.config['UPLOAD_FOLDER']):
+        os.makedirs(flask_app.config['UPLOAD_FOLDER'])
+    
     register_routes(flask_app)
-
+    
     @flask_app.route('/', defaults={'path': ''})
     @flask_app.route('/<path:path>')
     def serve_frontend(path):
@@ -19,7 +25,7 @@ def create_app():
             return send_from_directory(flask_app.static_folder, path)
         else:
             return send_from_directory(flask_app.static_folder, 'index.html')
-
+    
     return flask_app
 
 if __name__ == '__main__':
