@@ -1,4 +1,4 @@
-# pylint: disable=missing-module-docstring, missing-function-docstring, missing-final-newline, trailing-whitespace, line-too-long, missing-class-docstring
+# pylint: disable=missing-module-docstring, missing-function-docstring, missing-final-newline, trailing-whitespace, line-too-long, missing-class-docstring, missing-timeout
 
 import json
 import os
@@ -44,7 +44,7 @@ def get_all_eps(companies):
     df_json = pd.DataFrame(api_response)
     # Extract the required columns (symbol and eps)
     df_json = df_json[['symbol', 'eps']]
-    # Rename the symbol column in the DataFrame
+    # Rename the columns in the DataFrame
     df_json = df_json.rename(columns={'symbol': 'Symbol'})
     df_json = df_json.rename(columns={'eps': 'EPS'})
     return df_json
