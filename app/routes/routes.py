@@ -1,9 +1,9 @@
 # pylint: disable=missing-module-docstring, missing-function-docstring, missing-class-docstring, missing-final-newline, trailing-whitespace, line-too-long
 import os
-from io import BytesIO
 import pandas as pd
 from flask import jsonify, send_from_directory, current_app, request
 from werkzeug.utils import secure_filename
+from ..utils.clean_file_data import clean_and_save_file
 
 
 def register_routes(app):
@@ -25,7 +25,6 @@ def register_routes(app):
         if file:
             filename = secure_filename(file.filename)
             file_extension = filename.rsplit(".", 1)[1].lower()
-
             if file_extension not in ["csv", "xls", "xlsx"]:
                 return (
                     jsonify(
@@ -37,33 +36,13 @@ def register_routes(app):
                 )
 
             try:
-                if file_extension == "csv":
-                    df = pd.read_csv(BytesIO(file.read()))
-                else:  # xls or xlsx
-                    xls = pd.ExcelFile(BytesIO(file.read()))
-                    if "All" in xls.sheet_names:
-                        df = pd.read_excel(xls, sheet_name="All")
-                    else:
-                        return (
-                            jsonify(
-                                {
-                                    "error": "The Excel file does not contain a sheet named 'All'."
-                                }
-                            ),
-                            400,
-                        )
-
-                # Here you can perform any operations on the DataFrame if needed
-                print(f"DataFrame shape: {df.shape}")
-                print(f"DataFrame head:\n{df.head()}")
-
+                clean_and_save_file(file, current_app.config["UPLOAD_FOLDER"])
+                
                 return jsonify(
-                    {
-                        "message": f"File '{filename}' received and loaded successfully.",
-                        "rows": df.shape[0],
-                        "columns": df.shape[1],
-                    }
-                )
+                {
+                    "message": f"File '{filename}' received and loaded successfully."
+                }
+            )
 
             except (pd.errors.ParserError, pd.errors.EmptyDataError, ValueError) as e:
                 return (
@@ -93,8 +72,7 @@ def register_routes(app):
         if path == "" or "." not in path:
             if os.path.exists(os.path.join(current_app.static_folder, f"{path}.html")):
                 return send_from_directory(current_app.static_folder, f"{path}.html")
-            else:
-                return send_from_directory(current_app.static_folder, "index.html")
+            return send_from_directory(current_app.static_folder, "index.html")
 
         # If nothing matches, return 404
         return app.send_static_file("404.html")
