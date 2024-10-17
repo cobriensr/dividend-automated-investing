@@ -1,0 +1,240 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "dividendYielTTM": {
+        "type": "number"
+      },
+      "dividendYielPercentageTTM": {
+        "type": "number"
+      },
+      "peRatioTTM": {
+        "type": "number"
+      },
+      "pegRatioTTM": {
+        "type": "number"
+      },
+      "payoutRatioTTM": {
+        "type": "number"
+      },
+      "currentRatioTTM": {
+        "type": "number"
+      },
+      "quickRatioTTM": {
+        "type": "number"
+      },
+      "cashRatioTTM": {
+        "type": "number"
+      },
+      "daysOfSalesOutstandingTTM": {
+        "type": "number"
+      },
+      "daysOfInventoryOutstandingTTM": {
+        "type": "number"
+      },
+      "operatingCycleTTM": {
+        "type": "number"
+      },
+      "daysOfPayablesOutstandingTTM": {
+        "type": "number"
+      },
+      "cashConversionCycleTTM": {
+        "type": "number"
+      },
+      "grossProfitMarginTTM": {
+        "type": "number"
+      },
+      "operatingProfitMarginTTM": {
+        "type": "number"
+      },
+      "pretaxProfitMarginTTM": {
+        "type": "number"
+      },
+      "netProfitMarginTTM": {
+        "type": "number"
+      },
+      "effectiveTaxRateTTM": {
+        "type": "number"
+      },
+      "returnOnAssetsTTM": {
+        "type": "number"
+      },
+      "returnOnEquityTTM": {
+        "type": "number"
+      },
+      "returnOnCapitalEmployedTTM": {
+        "type": "number"
+      },
+      "netIncomePerEBTTTM": {
+        "type": "number"
+      },
+      "ebtPerEbitTTM": {
+        "type": "number"
+      },
+      "ebitPerRevenueTTM": {
+        "type": "number"
+      },
+      "debtRatioTTM": {
+        "type": "number"
+      },
+      "debtEquityRatioTTM": {
+        "type": "number"
+      },
+      "longTermDebtToCapitalizationTTM": {
+        "type": "number"
+      },
+      "totalDebtToCapitalizationTTM": {
+        "type": "number"
+      },
+      "interestCoverageTTM": {
+        "type": "number"
+      },
+      "cashFlowToDebtRatioTTM": {
+        "type": "number"
+      },
+      "companyEquityMultiplierTTM": {
+        "type": "number"
+      },
+      "receivablesTurnoverTTM": {
+        "type": "number"
+      },
+      "payablesTurnoverTTM": {
+        "type": "number"
+      },
+      "inventoryTurnoverTTM": {
+        "type": "number"
+      },
+      "fixedAssetTurnoverTTM": {
+        "type": "number"
+      },
+      "assetTurnoverTTM": {
+        "type": "number"
+      },
+      "operatingCashFlowPerShareTTM": {
+        "type": "number"
+      },
+      "freeCashFlowPerShareTTM": {
+        "type": "number"
+      },
+      "cashPerShareTTM": {
+        "type": "number"
+      },
+      "operatingCashFlowSalesRatioTTM": {
+        "type": "number"
+      },
+      "freeCashFlowOperatingCashFlowRatioTTM": {
+        "type": "number"
+      },
+      "cashFlowCoverageRatiosTTM": {
+        "type": "number"
+      },
+      "shortTermCoverageRatiosTTM": {
+        "type": "number"
+      },
+      "capitalExpenditureCoverageRatioTTM": {
+        "type": "number"
+      },
+      "dividendPaidAndCapexCoverageRatioTTM": {
+        "type": "number"
+      },
+      "priceBookValueRatioTTM": {
+        "type": "number"
+      },
+      "priceToBookRatioTTM": {
+        "type": "number"
+      },
+      "priceToSalesRatioTTM": {
+        "type": "number"
+      },
+      "priceEarningsRatioTTM": {
+        "type": "number"
+      },
+      "priceToFreeCashFlowsRatioTTM": {
+        "type": "number"
+      },
+      "priceToOperatingCashFlowsRatioTTM": {
+        "type": "number"
+      },
+      "priceCashFlowRatioTTM": {
+        "type": "number"
+      },
+      "priceEarningsToGrowthRatioTTM": {
+        "type": "number"
+      },
+      "priceSalesRatioTTM": {
+        "type": "number"
+      },
+      "enterpriseValueMultipleTTM": {
+        "type": "number"
+      },
+      "priceFairValueTTM": {
+        "type": "number"
+      },
+      "dividendPerShareTTM": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "dividendYielTTM",
+      "dividendYielPercentageTTM",
+      "peRatioTTM",
+      "pegRatioTTM",
+      "payoutRatioTTM",
+      "currentRatioTTM",
+      "quickRatioTTM",
+      "cashRatioTTM",
+      "daysOfSalesOutstandingTTM",
+      "daysOfInventoryOutstandingTTM",
+      "operatingCycleTTM",
+      "daysOfPayablesOutstandingTTM",
+      "cashConversionCycleTTM",
+      "grossProfitMarginTTM",
+      "operatingProfitMarginTTM",
+      "pretaxProfitMarginTTM",
+      "netProfitMarginTTM",
+      "effectiveTaxRateTTM",
+      "returnOnAssetsTTM",
+      "returnOnEquityTTM",
+      "returnOnCapitalEmployedTTM",
+      "netIncomePerEBTTTM",
+      "ebtPerEbitTTM",
+      "ebitPerRevenueTTM",
+      "debtRatioTTM",
+      "debtEquityRatioTTM",
+      "longTermDebtToCapitalizationTTM",
+      "totalDebtToCapitalizationTTM",
+      "interestCoverageTTM",
+      "cashFlowToDebtRatioTTM",
+      "companyEquityMultiplierTTM",
+      "receivablesTurnoverTTM",
+      "payablesTurnoverTTM",
+      "inventoryTurnoverTTM",
+      "fixedAssetTurnoverTTM",
+      "assetTurnoverTTM",
+      "operatingCashFlowPerShareTTM",
+      "freeCashFlowPerShareTTM",
+      "cashPerShareTTM",
+      "operatingCashFlowSalesRatioTTM",
+      "freeCashFlowOperatingCashFlowRatioTTM",
+      "cashFlowCoverageRatiosTTM",
+      "shortTermCoverageRatiosTTM",
+      "capitalExpenditureCoverageRatioTTM",
+      "dividendPaidAndCapexCoverageRatioTTM",
+      "priceBookValueRatioTTM",
+      "priceToBookRatioTTM",
+      "priceToSalesRatioTTM",
+      "priceEarningsRatioTTM",
+      "priceToFreeCashFlowsRatioTTM",
+      "priceToOperatingCashFlowsRatioTTM",
+      "priceCashFlowRatioTTM",
+      "priceEarningsToGrowthRatioTTM",
+      "priceSalesRatioTTM",
+      "enterpriseValueMultipleTTM",
+      "priceFairValueTTM",
+      "dividendPerShareTTM"
+    ],
+    "additionalProperties": false
+  }
+}

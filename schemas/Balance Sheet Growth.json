@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "symbol": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "growthCashAndCashEquivalents": {
+        "type": "number"
+      },
+      "growthShortTermInvestments": {
+        "type": "number"
+      },
+      "growthCashAndShortTermInvestments": {
+        "type": "number"
+      },
+      "growthNetReceivables": {
+        "type": "number"
+      },
+      "growthInventory": {
+        "type": "number"
+      },
+      "growthOtherCurrentAssets": {
+        "type": "number"
+      },
+      "growthTotalCurrentAssets": {
+        "type": "number"
+      },
+      "growthPropertyPlantEquipmentNet": {
+        "type": "number"
+      },
+      "growthGoodwill": {
+        "type": "integer"
+      },
+      "growthIntangibleAssets": {
+        "type": "integer"
+      },
+      "growthGoodwillAndIntangibleAssets": {
+        "type": "integer"
+      },
+      "growthLongTermInvestments": {
+        "type": "number"
+      },
+      "growthTaxAssets": {
+        "type": "number"
+      },
+      "growthOtherNonCurrentAssets": {
+        "type": "number"
+      },
+      "growthTotalNonCurrentAssets": {
+        "type": "number"
+      },
+      "growthOtherAssets": {
+        "type": "integer"
+      },
+      "growthTotalAssets": {
+        "type": "number"
+      },
+      "growthAccountPayables": {
+        "type": "number"
+      },
+      "growthShortTermDebt": {
+        "type": "number"
+      },
+      "growthTaxPayables": {
+        "type": "number"
+      },
+      "growthDeferredRevenue": {
+        "type": "number"
+      },
+      "growthOtherCurrentLiabilities": {
+        "type": "number"
+      },
+      "growthTotalCurrentLiabilities": {
+        "type": "number"
+      },
+      "growthLongTermDebt": {
+        "type": "number"
+      },
+      "growthDeferredRevenueNonCurrent": {
+        "type": "integer"
+      },
+      "growthDeferrredTaxLiabilitiesNonCurrent": {
+        "type": "integer"
+      },
+      "growthOtherNonCurrentLiabilities": {
+        "type": "number"
+      },
+      "growthTotalNonCurrentLiabilities": {
+        "type": "number"
+      },
+      "growthOtherLiabilities": {
+        "type": "integer"
+      },
+      "growthTotalLiabilities": {
+        "type": "number"
+      },
+      "growthCommonStock": {
+        "type": "number"
+      },
+      "growthRetainedEarnings": {
+        "type": "number"
+      },
+      "growthAccumulatedOtherComprehensiveIncomeLoss": {
+        "type": "number"
+      },
+      "growthOthertotalStockholdersEquity": {
+        "type": "integer"
+      },
+      "growthTotalStockholdersEquity": {
+        "type": "number"
+      },
+      "growthTotalLiabilitiesAndStockholdersEquity": {
+        "type": "number"
+      },
+      "growthTotalInvestments": {
+        "type": "number"
+      },
+      "growthTotalDebt": {
+        "type": "number"
+      },
+      "growthNetDebt": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "date",
+      "symbol",
+      "calendarYear",
+      "period",
+      "growthCashAndCashEquivalents",
+      "growthShortTermInvestments",
+      "growthCashAndShortTermInvestments",
+      "growthNetReceivables",
+      "growthInventory",
+      "growthOtherCurrentAssets",
+      "growthTotalCurrentAssets",
+      "growthPropertyPlantEquipmentNet",
+      "growthGoodwill",
+      "growthIntangibleAssets",
+      "growthGoodwillAndIntangibleAssets",
+      "growthLongTermInvestments",
+      "growthTaxAssets",
+      "growthOtherNonCurrentAssets",
+      "growthTotalNonCurrentAssets",
+      "growthOtherAssets",
+      "growthTotalAssets",
+      "growthAccountPayables",
+      "growthShortTermDebt",
+      "growthTaxPayables",
+      "growthDeferredRevenue",
+      "growthOtherCurrentLiabilities",
+      "growthTotalCurrentLiabilities",
+      "growthLongTermDebt",
+      "growthDeferredRevenueNonCurrent",
+      "growthDeferrredTaxLiabilitiesNonCurrent",
+      "growthOtherNonCurrentLiabilities",
+      "growthTotalNonCurrentLiabilities",
+      "growthOtherLiabilities",
+      "growthTotalLiabilities",
+      "growthCommonStock",
+      "growthRetainedEarnings",
+      "growthAccumulatedOtherComprehensiveIncomeLoss",
+      "growthOthertotalStockholdersEquity",
+      "growthTotalStockholdersEquity",
+      "growthTotalLiabilitiesAndStockholdersEquity",
+      "growthTotalInvestments",
+      "growthTotalDebt",
+      "growthNetDebt"
+    ],
+    "additionalProperties": false
+  }
+}

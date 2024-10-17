@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string"
+      },
+      "altmanZScore": {
+        "type": "number"
+      },
+      "piotroskiScore": {
+        "type": "integer"
+      },
+      "workingCapital": {
+        "type": "integer"
+      },
+      "totalAssets": {
+        "type": "integer"
+      },
+      "retainedEarnings": {
+        "type": "integer"
+      },
+      "ebit": {
+        "type": "integer"
+      },
+      "marketCap": {
+        "type": "integer"
+      },
+      "totalLiabilities": {
+        "type": "integer"
+      },
+      "revenue": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "symbol",
+      "altmanZScore",
+      "piotroskiScore",
+      "workingCapital",
+      "totalAssets",
+      "retainedEarnings",
+      "ebit",
+      "marketCap",
+      "totalLiabilities",
+      "revenue"
+    ],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "symbol": {
+        "type": "string"
+      },
+      "reportedCurrency": {
+        "type": "string"
+      },
+      "cik": {
+        "type": "string"
+      },
+      "fillingDate": {
+        "type": "string"
+      },
+      "acceptedDate": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "netIncome": {
+        "type": "integer"
+      },
+      "depreciationAndAmortization": {
+        "type": "integer"
+      },
+      "deferredIncomeTax": {
+        "type": "integer"
+      },
+      "stockBasedCompensation": {
+        "type": "integer"
+      },
+      "changeInWorkingCapital": {
+        "type": "integer"
+      },
+      "accountsReceivables": {
+        "type": "integer"
+      },
+      "inventory": {
+        "type": "integer"
+      },
+      "accountsPayables": {
+        "type": "integer"
+      },
+      "otherWorkingCapital": {
+        "type": "integer"
+      },
+      "otherNonCashItems": {
+        "type": "integer"
+      },
+      "netCashProvidedByOperatingActivities": {
+        "type": "integer"
+      },
+      "investmentsInPropertyPlantAndEquipment": {
+        "type": "integer"
+      },
+      "acquisitionsNet": {
+        "type": "integer"
+      },
+      "purchasesOfInvestments": {
+        "type": "integer"
+      },
+      "salesMaturitiesOfInvestments": {
+        "type": "integer"
+      },
+      "otherInvestingActivites": {
+        "type": "integer"
+      },
+      "netCashUsedForInvestingActivites": {
+        "type": "integer"
+      },
+      "debtRepayment": {
+        "type": "integer"
+      },
+      "commonStockIssued": {
+        "type": "integer"
+      },
+      "commonStockRepurchased": {
+        "type": "integer"
+      },
+      "dividendsPaid": {
+        "type": "integer"
+      },
+      "otherFinancingActivites": {
+        "type": "integer"
+      },
+      "netCashUsedProvidedByFinancingActivities": {
+        "type": "integer"
+      },
+      "effectOfForexChangesOnCash": {
+        "type": "integer"
+      },
+      "netChangeInCash": {
+        "type": "integer"
+      },
+      "cashAtEndOfPeriod": {
+        "type": "integer"
+      },
+      "cashAtBeginningOfPeriod": {
+        "type": "integer"
+      },
+      "operatingCashFlow": {
+        "type": "integer"
+      },
+      "capitalExpenditure": {
+        "type": "integer"
+      },
+      "freeCashFlow": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "string"
+      },
+      "finalLink": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "date",
+      "symbol",
+      "reportedCurrency",
+      "cik",
+      "fillingDate",
+      "acceptedDate",
+      "calendarYear",
+      "period",
+      "netIncome",
+      "depreciationAndAmortization",
+      "deferredIncomeTax",
+      "stockBasedCompensation",
+      "changeInWorkingCapital",
+      "accountsReceivables",
+      "inventory",
+      "accountsPayables",
+      "otherWorkingCapital",
+      "otherNonCashItems",
+      "netCashProvidedByOperatingActivities",
+      "investmentsInPropertyPlantAndEquipment",
+      "acquisitionsNet",
+      "purchasesOfInvestments",
+      "salesMaturitiesOfInvestments",
+      "otherInvestingActivites",
+      "netCashUsedForInvestingActivites",
+      "debtRepayment",
+      "commonStockIssued",
+      "commonStockRepurchased",
+      "dividendsPaid",
+      "otherFinancingActivites",
+      "netCashUsedProvidedByFinancingActivities",
+      "effectOfForexChangesOnCash",
+      "netChangeInCash",
+      "cashAtEndOfPeriod",
+      "cashAtBeginningOfPeriod",
+      "operatingCashFlow",
+      "capitalExpenditure",
+      "freeCashFlow",
+      "link",
+      "finalLink"
+    ],
+    "additionalProperties": false
+  }
+}

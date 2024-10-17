@@ -1,0 +1,256 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "revenuePerShare": {
+        "type": "number"
+      },
+      "netIncomePerShare": {
+        "type": "number"
+      },
+      "operatingCashFlowPerShare": {
+        "type": "number"
+      },
+      "freeCashFlowPerShare": {
+        "type": "number"
+      },
+      "cashPerShare": {
+        "type": "number"
+      },
+      "bookValuePerShare": {
+        "type": "number"
+      },
+      "tangibleBookValuePerShare": {
+        "type": "number"
+      },
+      "shareholdersEquityPerShare": {
+        "type": "number"
+      },
+      "interestDebtPerShare": {
+        "type": "number"
+      },
+      "marketCap": {
+        "type": "integer"
+      },
+      "enterpriseValue": {
+        "type": "integer"
+      },
+      "peRatio": {
+        "type": "number"
+      },
+      "priceToSalesRatio": {
+        "type": "number"
+      },
+      "pocfratio": {
+        "type": "number"
+      },
+      "pfcfRatio": {
+        "type": "number"
+      },
+      "pbRatio": {
+        "type": "number"
+      },
+      "ptbRatio": {
+        "type": "number"
+      },
+      "evToSales": {
+        "type": "number"
+      },
+      "enterpriseValueOverEBITDA": {
+        "type": "number"
+      },
+      "evToOperatingCashFlow": {
+        "type": "number"
+      },
+      "evToFreeCashFlow": {
+        "type": "number"
+      },
+      "earningsYield": {
+        "type": "number"
+      },
+      "freeCashFlowYield": {
+        "type": "number"
+      },
+      "debtToEquity": {
+        "type": "number"
+      },
+      "debtToAssets": {
+        "type": "number"
+      },
+      "netDebtToEBITDA": {
+        "type": "number"
+      },
+      "currentRatio": {
+        "type": "number"
+      },
+      "interestCoverage": {
+        "type": "number"
+      },
+      "incomeQuality": {
+        "type": "number"
+      },
+      "dividendYield": {
+        "type": "number"
+      },
+      "payoutRatio": {
+        "type": "number"
+      },
+      "salesGeneralAndAdministrativeToRevenue": {
+        "type": "integer"
+      },
+      "researchAndDdevelopementToRevenue": {
+        "type": "number"
+      },
+      "intangiblesToTotalAssets": {
+        "type": "integer"
+      },
+      "capexToOperatingCashFlow": {
+        "type": "number"
+      },
+      "capexToRevenue": {
+        "type": "number"
+      },
+      "capexToDepreciation": {
+        "type": "number"
+      },
+      "stockBasedCompensationToRevenue": {
+        "type": "number"
+      },
+      "grahamNumber": {
+        "type": "number"
+      },
+      "roic": {
+        "type": "number"
+      },
+      "returnOnTangibleAssets": {
+        "type": "number"
+      },
+      "grahamNetNet": {
+        "type": "number"
+      },
+      "workingCapital": {
+        "type": "integer"
+      },
+      "tangibleAssetValue": {
+        "type": "integer"
+      },
+      "netCurrentAssetValue": {
+        "type": "integer"
+      },
+      "investedCapital": {
+        "type": "integer"
+      },
+      "averageReceivables": {
+        "type": "integer"
+      },
+      "averagePayables": {
+        "type": "integer"
+      },
+      "averageInventory": {
+        "type": "integer"
+      },
+      "daysSalesOutstanding": {
+        "type": "number"
+      },
+      "daysPayablesOutstanding": {
+        "type": "number"
+      },
+      "daysOfInventoryOnHand": {
+        "type": "number"
+      },
+      "receivablesTurnover": {
+        "type": "number"
+      },
+      "payablesTurnover": {
+        "type": "number"
+      },
+      "inventoryTurnover": {
+        "type": "number"
+      },
+      "roe": {
+        "type": "number"
+      },
+      "capexPerShare": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "symbol",
+      "date",
+      "calendarYear",
+      "period",
+      "revenuePerShare",
+      "netIncomePerShare",
+      "operatingCashFlowPerShare",
+      "freeCashFlowPerShare",
+      "cashPerShare",
+      "bookValuePerShare",
+      "tangibleBookValuePerShare",
+      "shareholdersEquityPerShare",
+      "interestDebtPerShare",
+      "marketCap",
+      "enterpriseValue",
+      "peRatio",
+      "priceToSalesRatio",
+      "pocfratio",
+      "pfcfRatio",
+      "pbRatio",
+      "ptbRatio",
+      "evToSales",
+      "enterpriseValueOverEBITDA",
+      "evToOperatingCashFlow",
+      "evToFreeCashFlow",
+      "earningsYield",
+      "freeCashFlowYield",
+      "debtToEquity",
+      "debtToAssets",
+      "netDebtToEBITDA",
+      "currentRatio",
+      "interestCoverage",
+      "incomeQuality",
+      "dividendYield",
+      "payoutRatio",
+      "salesGeneralAndAdministrativeToRevenue",
+      "researchAndDdevelopementToRevenue",
+      "intangiblesToTotalAssets",
+      "capexToOperatingCashFlow",
+      "capexToRevenue",
+      "capexToDepreciation",
+      "stockBasedCompensationToRevenue",
+      "grahamNumber",
+      "roic",
+      "returnOnTangibleAssets",
+      "grahamNetNet",
+      "workingCapital",
+      "tangibleAssetValue",
+      "netCurrentAssetValue",
+      "investedCapital",
+      "averageReceivables",
+      "averagePayables",
+      "averageInventory",
+      "daysSalesOutstanding",
+      "daysPayablesOutstanding",
+      "daysOfInventoryOnHand",
+      "receivablesTurnover",
+      "payablesTurnover",
+      "inventoryTurnover",
+      "roe",
+      "capexPerShare"
+    ],
+    "additionalProperties": false
+  }
+}

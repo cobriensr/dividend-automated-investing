@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "symbol": {
+        "type": "string"
+      },
+      "reportedCurrency": {
+        "type": "string"
+      },
+      "cik": {
+        "type": "string"
+      },
+      "fillingDate": {
+        "type": "string"
+      },
+      "acceptedDate": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "revenue": {
+        "type": "integer"
+      },
+      "costOfRevenue": {
+        "type": "integer"
+      },
+      "grossProfit": {
+        "type": "integer"
+      },
+      "grossProfitRatio": {
+        "type": "number"
+      },
+      "researchAndDevelopmentExpenses": {
+        "type": "integer"
+      },
+      "generalAndAdministrativeExpenses": {
+        "type": "integer"
+      },
+      "sellingAndMarketingExpenses": {
+        "type": "integer"
+      },
+      "sellingGeneralAndAdministrativeExpenses": {
+        "type": "integer"
+      },
+      "otherExpenses": {
+        "type": "integer"
+      },
+      "operatingExpenses": {
+        "type": "integer"
+      },
+      "costAndExpenses": {
+        "type": "integer"
+      },
+      "interestIncome": {
+        "type": "integer"
+      },
+      "interestExpense": {
+        "type": "integer"
+      },
+      "depreciationAndAmortization": {
+        "type": "integer"
+      },
+      "ebitda": {
+        "type": "integer"
+      },
+      "ebitdaratio": {
+        "type": "number"
+      },
+      "operatingIncome": {
+        "type": "integer"
+      },
+      "operatingIncomeRatio": {
+        "type": "number"
+      },
+      "totalOtherIncomeExpensesNet": {
+        "type": "integer"
+      },
+      "incomeBeforeTax": {
+        "type": "integer"
+      },
+      "incomeBeforeTaxRatio": {
+        "type": "number"
+      },
+      "incomeTaxExpense": {
+        "type": "integer"
+      },
+      "netIncome": {
+        "type": "integer"
+      },
+      "netIncomeRatio": {
+        "type": "number"
+      },
+      "eps": {
+        "type": "number"
+      },
+      "epsdiluted": {
+        "type": "number"
+      },
+      "weightedAverageShsOut": {
+        "type": "integer"
+      },
+      "weightedAverageShsOutDil": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "string"
+      },
+      "finalLink": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "date",
+      "symbol",
+      "reportedCurrency",
+      "cik",
+      "fillingDate",
+      "acceptedDate",
+      "calendarYear",
+      "period",
+      "revenue",
+      "costOfRevenue",
+      "grossProfit",
+      "grossProfitRatio",
+      "researchAndDevelopmentExpenses",
+      "generalAndAdministrativeExpenses",
+      "sellingAndMarketingExpenses",
+      "sellingGeneralAndAdministrativeExpenses",
+      "otherExpenses",
+      "operatingExpenses",
+      "costAndExpenses",
+      "interestIncome",
+      "interestExpense",
+      "depreciationAndAmortization",
+      "ebitda",
+      "ebitdaratio",
+      "operatingIncome",
+      "operatingIncomeRatio",
+      "totalOtherIncomeExpensesNet",
+      "incomeBeforeTax",
+      "incomeBeforeTaxRatio",
+      "incomeTaxExpense",
+      "netIncome",
+      "netIncomeRatio",
+      "eps",
+      "epsdiluted",
+      "weightedAverageShsOut",
+      "weightedAverageShsOutDil",
+      "link",
+      "finalLink"
+    ],
+    "additionalProperties": false
+  }
+}

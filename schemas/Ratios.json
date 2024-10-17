@@ -1,0 +1,244 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "currentRatio": {
+        "type": "number"
+      },
+      "quickRatio": {
+        "type": "number"
+      },
+      "cashRatio": {
+        "type": "number"
+      },
+      "daysOfSalesOutstanding": {
+        "type": "number"
+      },
+      "daysOfInventoryOutstanding": {
+        "type": "number"
+      },
+      "operatingCycle": {
+        "type": "number"
+      },
+      "daysOfPayablesOutstanding": {
+        "type": "number"
+      },
+      "cashConversionCycle": {
+        "type": "number"
+      },
+      "grossProfitMargin": {
+        "type": "number"
+      },
+      "operatingProfitMargin": {
+        "type": "number"
+      },
+      "pretaxProfitMargin": {
+        "type": "number"
+      },
+      "netProfitMargin": {
+        "type": "number"
+      },
+      "effectiveTaxRate": {
+        "type": "number"
+      },
+      "returnOnAssets": {
+        "type": "number"
+      },
+      "returnOnEquity": {
+        "type": "number"
+      },
+      "returnOnCapitalEmployed": {
+        "type": "number"
+      },
+      "netIncomePerEBT": {
+        "type": "number"
+      },
+      "ebtPerEbit": {
+        "type": "number"
+      },
+      "ebitPerRevenue": {
+        "type": "number"
+      },
+      "debtRatio": {
+        "type": "number"
+      },
+      "debtEquityRatio": {
+        "type": "number"
+      },
+      "longTermDebtToCapitalization": {
+        "type": "number"
+      },
+      "totalDebtToCapitalization": {
+        "type": "number"
+      },
+      "interestCoverage": {
+        "type": "number"
+      },
+      "cashFlowToDebtRatio": {
+        "type": "number"
+      },
+      "companyEquityMultiplier": {
+        "type": "number"
+      },
+      "receivablesTurnover": {
+        "type": "number"
+      },
+      "payablesTurnover": {
+        "type": "number"
+      },
+      "inventoryTurnover": {
+        "type": "number"
+      },
+      "fixedAssetTurnover": {
+        "type": "number"
+      },
+      "assetTurnover": {
+        "type": "number"
+      },
+      "operatingCashFlowPerShare": {
+        "type": "number"
+      },
+      "freeCashFlowPerShare": {
+        "type": "number"
+      },
+      "cashPerShare": {
+        "type": "number"
+      },
+      "payoutRatio": {
+        "type": "number"
+      },
+      "operatingCashFlowSalesRatio": {
+        "type": "number"
+      },
+      "freeCashFlowOperatingCashFlowRatio": {
+        "type": "number"
+      },
+      "cashFlowCoverageRatios": {
+        "type": "number"
+      },
+      "shortTermCoverageRatios": {
+        "type": "number"
+      },
+      "capitalExpenditureCoverageRatio": {
+        "type": "number"
+      },
+      "dividendPaidAndCapexCoverageRatio": {
+        "type": "number"
+      },
+      "dividendPayoutRatio": {
+        "type": "number"
+      },
+      "priceBookValueRatio": {
+        "type": "number"
+      },
+      "priceToBookRatio": {
+        "type": "number"
+      },
+      "priceToSalesRatio": {
+        "type": "number"
+      },
+      "priceEarningsRatio": {
+        "type": "number"
+      },
+      "priceToFreeCashFlowsRatio": {
+        "type": "number"
+      },
+      "priceToOperatingCashFlowsRatio": {
+        "type": "number"
+      },
+      "priceCashFlowRatio": {
+        "type": "number"
+      },
+      "priceEarningsToGrowthRatio": {
+        "type": "number"
+      },
+      "priceSalesRatio": {
+        "type": "number"
+      },
+      "dividendYield": {
+        "type": "number"
+      },
+      "enterpriseValueMultiple": {
+        "type": "number"
+      },
+      "priceFairValue": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "symbol",
+      "date",
+      "calendarYear",
+      "period",
+      "currentRatio",
+      "quickRatio",
+      "cashRatio",
+      "daysOfSalesOutstanding",
+      "daysOfInventoryOutstanding",
+      "operatingCycle",
+      "daysOfPayablesOutstanding",
+      "cashConversionCycle",
+      "grossProfitMargin",
+      "operatingProfitMargin",
+      "pretaxProfitMargin",
+      "netProfitMargin",
+      "effectiveTaxRate",
+      "returnOnAssets",
+      "returnOnEquity",
+      "returnOnCapitalEmployed",
+      "netIncomePerEBT",
+      "ebtPerEbit",
+      "ebitPerRevenue",
+      "debtRatio",
+      "debtEquityRatio",
+      "longTermDebtToCapitalization",
+      "totalDebtToCapitalization",
+      "interestCoverage",
+      "cashFlowToDebtRatio",
+      "companyEquityMultiplier",
+      "receivablesTurnover",
+      "payablesTurnover",
+      "inventoryTurnover",
+      "fixedAssetTurnover",
+      "assetTurnover",
+      "operatingCashFlowPerShare",
+      "freeCashFlowPerShare",
+      "cashPerShare",
+      "payoutRatio",
+      "operatingCashFlowSalesRatio",
+      "freeCashFlowOperatingCashFlowRatio",
+      "cashFlowCoverageRatios",
+      "shortTermCoverageRatios",
+      "capitalExpenditureCoverageRatio",
+      "dividendPaidAndCapexCoverageRatio",
+      "dividendPayoutRatio",
+      "priceBookValueRatio",
+      "priceToBookRatio",
+      "priceToSalesRatio",
+      "priceEarningsRatio",
+      "priceToFreeCashFlowsRatio",
+      "priceToOperatingCashFlowsRatio",
+      "priceCashFlowRatio",
+      "priceEarningsToGrowthRatio",
+      "priceSalesRatio",
+      "dividendYield",
+      "enterpriseValueMultiple",
+      "priceFairValue"
+    ],
+    "additionalProperties": false
+  }
+}

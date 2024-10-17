@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "symbol": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "revenueGrowth": {
+        "type": "number"
+      },
+      "grossProfitGrowth": {
+        "type": "number"
+      },
+      "ebitgrowth": {
+        "type": "number"
+      },
+      "operatingIncomeGrowth": {
+        "type": "number"
+      },
+      "netIncomeGrowth": {
+        "type": "number"
+      },
+      "epsgrowth": {
+        "type": "number"
+      },
+      "epsdilutedGrowth": {
+        "type": "number"
+      },
+      "weightedAverageSharesGrowth": {
+        "type": "number"
+      },
+      "weightedAverageSharesDilutedGrowth": {
+        "type": "number"
+      },
+      "dividendsperShareGrowth": {
+        "type": "number"
+      },
+      "operatingCashFlowGrowth": {
+        "type": "number"
+      },
+      "freeCashFlowGrowth": {
+        "type": "number"
+      },
+      "tenYRevenueGrowthPerShare": {
+        "type": "number"
+      },
+      "fiveYRevenueGrowthPerShare": {
+        "type": "number"
+      },
+      "threeYRevenueGrowthPerShare": {
+        "type": "number"
+      },
+      "tenYOperatingCFGrowthPerShare": {
+        "type": "number"
+      },
+      "fiveYOperatingCFGrowthPerShare": {
+        "type": "number"
+      },
+      "threeYOperatingCFGrowthPerShare": {
+        "type": "number"
+      },
+      "tenYNetIncomeGrowthPerShare": {
+        "type": "number"
+      },
+      "fiveYNetIncomeGrowthPerShare": {
+        "type": "number"
+      },
+      "threeYNetIncomeGrowthPerShare": {
+        "type": "number"
+      },
+      "tenYShareholdersEquityGrowthPerShare": {
+        "type": "number"
+      },
+      "fiveYShareholdersEquityGrowthPerShare": {
+        "type": "number"
+      },
+      "threeYShareholdersEquityGrowthPerShare": {
+        "type": "number"
+      },
+      "tenYDividendperShareGrowthPerShare": {
+        "type": "number"
+      },
+      "fiveYDividendperShareGrowthPerShare": {
+        "type": "number"
+      },
+      "threeYDividendperShareGrowthPerShare": {
+        "type": "number"
+      },
+      "receivablesGrowth": {
+        "type": "number"
+      },
+      "inventoryGrowth": {
+        "type": "number"
+      },
+      "assetGrowth": {
+        "type": "number"
+      },
+      "bookValueperShareGrowth": {
+        "type": "number"
+      },
+      "debtGrowth": {
+        "type": "number"
+      },
+      "rdexpenseGrowth": {
+        "type": "number"
+      },
+      "sgaexpensesGrowth": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "symbol",
+      "date",
+      "calendarYear",
+      "period",
+      "revenueGrowth",
+      "grossProfitGrowth",
+      "ebitgrowth",
+      "operatingIncomeGrowth",
+      "netIncomeGrowth",
+      "epsgrowth",
+      "epsdilutedGrowth",
+      "weightedAverageSharesGrowth",
+      "weightedAverageSharesDilutedGrowth",
+      "dividendsperShareGrowth",
+      "operatingCashFlowGrowth",
+      "freeCashFlowGrowth",
+      "tenYRevenueGrowthPerShare",
+      "fiveYRevenueGrowthPerShare",
+      "threeYRevenueGrowthPerShare",
+      "tenYOperatingCFGrowthPerShare",
+      "fiveYOperatingCFGrowthPerShare",
+      "threeYOperatingCFGrowthPerShare",
+      "tenYNetIncomeGrowthPerShare",
+      "fiveYNetIncomeGrowthPerShare",
+      "threeYNetIncomeGrowthPerShare",
+      "tenYShareholdersEquityGrowthPerShare",
+      "fiveYShareholdersEquityGrowthPerShare",
+      "threeYShareholdersEquityGrowthPerShare",
+      "tenYDividendperShareGrowthPerShare",
+      "fiveYDividendperShareGrowthPerShare",
+      "threeYDividendperShareGrowthPerShare",
+      "receivablesGrowth",
+      "inventoryGrowth",
+      "assetGrowth",
+      "bookValueperShareGrowth",
+      "debtGrowth",
+      "rdexpenseGrowth",
+      "sgaexpensesGrowth"
+    ],
+    "additionalProperties": false
+  }
+}

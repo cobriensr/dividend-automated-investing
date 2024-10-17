@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "symbol": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "growthNetIncome": {
+        "type": "number"
+      },
+      "growthDepreciationAndAmortization": {
+        "type": "number"
+      },
+      "growthDeferredIncomeTax": {
+        "type": "integer"
+      },
+      "growthStockBasedCompensation": {
+        "type": "number"
+      },
+      "growthChangeInWorkingCapital": {
+        "type": "number"
+      },
+      "growthAccountsReceivables": {
+        "type": "number"
+      },
+      "growthInventory": {
+        "type": "number"
+      },
+      "growthAccountsPayables": {
+        "type": "number"
+      },
+      "growthOtherWorkingCapital": {
+        "type": "number"
+      },
+      "growthOtherNonCashItems": {
+        "type": "number"
+      },
+      "growthNetCashProvidedByOperatingActivites": {
+        "type": "number"
+      },
+      "growthInvestmentsInPropertyPlantAndEquipment": {
+        "type": "number"
+      },
+      "growthAcquisitionsNet": {
+        "type": "integer"
+      },
+      "growthPurchasesOfInvestments": {
+        "type": "number"
+      },
+      "growthSalesMaturitiesOfInvestments": {
+        "type": "number"
+      },
+      "growthOtherInvestingActivites": {
+        "type": "number"
+      },
+      "growthNetCashUsedForInvestingActivites": {
+        "type": "number"
+      },
+      "growthDebtRepayment": {
+        "type": "number"
+      },
+      "growthCommonStockIssued": {
+        "type": "integer"
+      },
+      "growthCommonStockRepurchased": {
+        "type": "number"
+      },
+      "growthDividendsPaid": {
+        "type": "number"
+      },
+      "growthOtherFinancingActivites": {
+        "type": "number"
+      },
+      "growthNetCashUsedProvidedByFinancingActivities": {
+        "type": "number"
+      },
+      "growthEffectOfForexChangesOnCash": {
+        "type": "integer"
+      },
+      "growthNetChangeInCash": {
+        "type": "number"
+      },
+      "growthCashAtEndOfPeriod": {
+        "type": "number"
+      },
+      "growthCashAtBeginningOfPeriod": {
+        "type": "number"
+      },
+      "growthOperatingCashFlow": {
+        "type": "number"
+      },
+      "growthCapitalExpenditure": {
+        "type": "number"
+      },
+      "growthFreeCashFlow": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "date",
+      "symbol",
+      "calendarYear",
+      "period",
+      "growthNetIncome",
+      "growthDepreciationAndAmortization",
+      "growthDeferredIncomeTax",
+      "growthStockBasedCompensation",
+      "growthChangeInWorkingCapital",
+      "growthAccountsReceivables",
+      "growthInventory",
+      "growthAccountsPayables",
+      "growthOtherWorkingCapital",
+      "growthOtherNonCashItems",
+      "growthNetCashProvidedByOperatingActivites",
+      "growthInvestmentsInPropertyPlantAndEquipment",
+      "growthAcquisitionsNet",
+      "growthPurchasesOfInvestments",
+      "growthSalesMaturitiesOfInvestments",
+      "growthOtherInvestingActivites",
+      "growthNetCashUsedForInvestingActivites",
+      "growthDebtRepayment",
+      "growthCommonStockIssued",
+      "growthCommonStockRepurchased",
+      "growthDividendsPaid",
+      "growthOtherFinancingActivites",
+      "growthNetCashUsedProvidedByFinancingActivities",
+      "growthEffectOfForexChangesOnCash",
+      "growthNetChangeInCash",
+      "growthCashAtEndOfPeriod",
+      "growthCashAtBeginningOfPeriod",
+      "growthOperatingCashFlow",
+      "growthCapitalExpenditure",
+      "growthFreeCashFlow"
+    ],
+    "additionalProperties": false
+  }
+}

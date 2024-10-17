@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "revenuePerShareTTM": {
+        "type": "number"
+      },
+      "netIncomePerShareTTM": {
+        "type": "number"
+      },
+      "operatingCashFlowPerShareTTM": {
+        "type": "number"
+      },
+      "freeCashFlowPerShareTTM": {
+        "type": "number"
+      },
+      "cashPerShareTTM": {
+        "type": "number"
+      },
+      "bookValuePerShareTTM": {
+        "type": "number"
+      },
+      "tangibleBookValuePerShareTTM": {
+        "type": "number"
+      },
+      "shareholdersEquityPerShareTTM": {
+        "type": "number"
+      },
+      "interestDebtPerShareTTM": {
+        "type": "number"
+      },
+      "marketCapTTM": {
+        "type": "integer"
+      },
+      "enterpriseValueTTM": {
+        "type": "integer"
+      },
+      "peRatioTTM": {
+        "type": "number"
+      },
+      "priceToSalesRatioTTM": {
+        "type": "number"
+      },
+      "pocfratioTTM": {
+        "type": "number"
+      },
+      "pfcfRatioTTM": {
+        "type": "number"
+      },
+      "pbRatioTTM": {
+        "type": "number"
+      },
+      "ptbRatioTTM": {
+        "type": "number"
+      },
+      "evToSalesTTM": {
+        "type": "number"
+      },
+      "enterpriseValueOverEBITDATTM": {
+        "type": "number"
+      },
+      "evToOperatingCashFlowTTM": {
+        "type": "number"
+      },
+      "evToFreeCashFlowTTM": {
+        "type": "number"
+      },
+      "earningsYieldTTM": {
+        "type": "number"
+      },
+      "freeCashFlowYieldTTM": {
+        "type": "number"
+      },
+      "debtToEquityTTM": {
+        "type": "number"
+      },
+      "debtToAssetsTTM": {
+        "type": "number"
+      },
+      "netDebtToEBITDATTM": {
+        "type": "number"
+      },
+      "currentRatioTTM": {
+        "type": "number"
+      },
+      "interestCoverageTTM": {
+        "type": "number"
+      },
+      "incomeQualityTTM": {
+        "type": "number"
+      },
+      "dividendYieldTTM": {
+        "type": "number"
+      },
+      "dividendYieldPercentageTTM": {
+        "type": "number"
+      },
+      "payoutRatioTTM": {
+        "type": "number"
+      },
+      "salesGeneralAndAdministrativeToRevenueTTM": {
+        "type": "integer"
+      },
+      "researchAndDevelopementToRevenueTTM": {
+        "type": "number"
+      },
+      "intangiblesToTotalAssetsTTM": {
+        "type": "integer"
+      },
+      "capexToOperatingCashFlowTTM": {
+        "type": "number"
+      },
+      "capexToRevenueTTM": {
+        "type": "number"
+      },
+      "capexToDepreciationTTM": {
+        "type": "number"
+      },
+      "stockBasedCompensationToRevenueTTM": {
+        "type": "number"
+      },
+      "grahamNumberTTM": {
+        "type": "number"
+      },
+      "roicTTM": {
+        "type": "number"
+      },
+      "returnOnTangibleAssetsTTM": {
+        "type": "number"
+      },
+      "grahamNetNetTTM": {
+        "type": "number"
+      },
+      "workingCapitalTTM": {
+        "type": "integer"
+      },
+      "tangibleAssetValueTTM": {
+        "type": "integer"
+      },
+      "netCurrentAssetValueTTM": {
+        "type": "integer"
+      },
+      "investedCapitalTTM": {
+        "type": "integer"
+      },
+      "averageReceivablesTTM": {
+        "type": "integer"
+      },
+      "averagePayablesTTM": {
+        "type": "integer"
+      },
+      "averageInventoryTTM": {
+        "type": "integer"
+      },
+      "daysSalesOutstandingTTM": {
+        "type": "number"
+      },
+      "daysPayablesOutstandingTTM": {
+        "type": "number"
+      },
+      "daysOfInventoryOnHandTTM": {
+        "type": "number"
+      },
+      "receivablesTurnoverTTM": {
+        "type": "number"
+      },
+      "payablesTurnoverTTM": {
+        "type": "number"
+      },
+      "inventoryTurnoverTTM": {
+        "type": "number"
+      },
+      "roeTTM": {
+        "type": "number"
+      },
+      "capexPerShareTTM": {
+        "type": "number"
+      },
+      "dividendPerShareTTM": {
+        "type": "number"
+      },
+      "debtToMarketCapTTM": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "revenuePerShareTTM",
+      "netIncomePerShareTTM",
+      "operatingCashFlowPerShareTTM",
+      "freeCashFlowPerShareTTM",
+      "cashPerShareTTM",
+      "bookValuePerShareTTM",
+      "tangibleBookValuePerShareTTM",
+      "shareholdersEquityPerShareTTM",
+      "interestDebtPerShareTTM",
+      "marketCapTTM",
+      "enterpriseValueTTM",
+      "peRatioTTM",
+      "priceToSalesRatioTTM",
+      "pocfratioTTM",
+      "pfcfRatioTTM",
+      "pbRatioTTM",
+      "ptbRatioTTM",
+      "evToSalesTTM",
+      "enterpriseValueOverEBITDATTM",
+      "evToOperatingCashFlowTTM",
+      "evToFreeCashFlowTTM",
+      "earningsYieldTTM",
+      "freeCashFlowYieldTTM",
+      "debtToEquityTTM",
+      "debtToAssetsTTM",
+      "netDebtToEBITDATTM",
+      "currentRatioTTM",
+      "interestCoverageTTM",
+      "incomeQualityTTM",
+      "dividendYieldTTM",
+      "dividendYieldPercentageTTM",
+      "payoutRatioTTM",
+      "salesGeneralAndAdministrativeToRevenueTTM",
+      "researchAndDevelopementToRevenueTTM",
+      "intangiblesToTotalAssetsTTM",
+      "capexToOperatingCashFlowTTM",
+      "capexToRevenueTTM",
+      "capexToDepreciationTTM",
+      "stockBasedCompensationToRevenueTTM",
+      "grahamNumberTTM",
+      "roicTTM",
+      "returnOnTangibleAssetsTTM",
+      "grahamNetNetTTM",
+      "workingCapitalTTM",
+      "tangibleAssetValueTTM",
+      "netCurrentAssetValueTTM",
+      "investedCapitalTTM",
+      "averageReceivablesTTM",
+      "averagePayablesTTM",
+      "averageInventoryTTM",
+      "daysSalesOutstandingTTM",
+      "daysPayablesOutstandingTTM",
+      "daysOfInventoryOnHandTTM",
+      "receivablesTurnoverTTM",
+      "payablesTurnoverTTM",
+      "inventoryTurnoverTTM",
+      "roeTTM",
+      "capexPerShareTTM",
+      "dividendPerShareTTM",
+      "debtToMarketCapTTM"
+    ],
+    "additionalProperties": false
+  }
+}

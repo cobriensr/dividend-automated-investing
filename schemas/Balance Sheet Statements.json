@@ -1,0 +1,228 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "symbol": {
+        "type": "string"
+      },
+      "reportedCurrency": {
+        "type": "string"
+      },
+      "cik": {
+        "type": "string"
+      },
+      "fillingDate": {
+        "type": "string"
+      },
+      "acceptedDate": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "cashAndCashEquivalents": {
+        "type": "integer"
+      },
+      "shortTermInvestments": {
+        "type": "integer"
+      },
+      "cashAndShortTermInvestments": {
+        "type": "integer"
+      },
+      "netReceivables": {
+        "type": "integer"
+      },
+      "inventory": {
+        "type": "integer"
+      },
+      "otherCurrentAssets": {
+        "type": "integer"
+      },
+      "totalCurrentAssets": {
+        "type": "integer"
+      },
+      "propertyPlantEquipmentNet": {
+        "type": "integer"
+      },
+      "goodwill": {
+        "type": "integer"
+      },
+      "intangibleAssets": {
+        "type": "integer"
+      },
+      "goodwillAndIntangibleAssets": {
+        "type": "integer"
+      },
+      "longTermInvestments": {
+        "type": "integer"
+      },
+      "taxAssets": {
+        "type": "integer"
+      },
+      "otherNonCurrentAssets": {
+        "type": "integer"
+      },
+      "totalNonCurrentAssets": {
+        "type": "integer"
+      },
+      "otherAssets": {
+        "type": "integer"
+      },
+      "totalAssets": {
+        "type": "integer"
+      },
+      "accountPayables": {
+        "type": "integer"
+      },
+      "shortTermDebt": {
+        "type": "integer"
+      },
+      "taxPayables": {
+        "type": "integer"
+      },
+      "deferredRevenue": {
+        "type": "integer"
+      },
+      "otherCurrentLiabilities": {
+        "type": "integer"
+      },
+      "totalCurrentLiabilities": {
+        "type": "integer"
+      },
+      "longTermDebt": {
+        "type": "integer"
+      },
+      "deferredRevenueNonCurrent": {
+        "type": "integer"
+      },
+      "deferredTaxLiabilitiesNonCurrent": {
+        "type": "integer"
+      },
+      "otherNonCurrentLiabilities": {
+        "type": "integer"
+      },
+      "totalNonCurrentLiabilities": {
+        "type": "integer"
+      },
+      "otherLiabilities": {
+        "type": "integer"
+      },
+      "capitalLeaseObligations": {
+        "type": "integer"
+      },
+      "totalLiabilities": {
+        "type": "integer"
+      },
+      "preferredStock": {
+        "type": "integer"
+      },
+      "commonStock": {
+        "type": "integer"
+      },
+      "retainedEarnings": {
+        "type": "integer"
+      },
+      "accumulatedOtherComprehensiveIncomeLoss": {
+        "type": "integer"
+      },
+      "othertotalStockholdersEquity": {
+        "type": "integer"
+      },
+      "totalStockholdersEquity": {
+        "type": "integer"
+      },
+      "totalEquity": {
+        "type": "integer"
+      },
+      "totalLiabilitiesAndStockholdersEquity": {
+        "type": "integer"
+      },
+      "minorityInterest": {
+        "type": "integer"
+      },
+      "totalLiabilitiesAndTotalEquity": {
+        "type": "integer"
+      },
+      "totalInvestments": {
+        "type": "integer"
+      },
+      "totalDebt": {
+        "type": "integer"
+      },
+      "netDebt": {
+        "type": "integer"
+      },
+      "link": {
+        "type": "string"
+      },
+      "finalLink": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "date",
+      "symbol",
+      "reportedCurrency",
+      "cik",
+      "fillingDate",
+      "acceptedDate",
+      "calendarYear",
+      "period",
+      "cashAndCashEquivalents",
+      "shortTermInvestments",
+      "cashAndShortTermInvestments",
+      "netReceivables",
+      "inventory",
+      "otherCurrentAssets",
+      "totalCurrentAssets",
+      "propertyPlantEquipmentNet",
+      "goodwill",
+      "intangibleAssets",
+      "goodwillAndIntangibleAssets",
+      "longTermInvestments",
+      "taxAssets",
+      "otherNonCurrentAssets",
+      "totalNonCurrentAssets",
+      "otherAssets",
+      "totalAssets",
+      "accountPayables",
+      "shortTermDebt",
+      "taxPayables",
+      "deferredRevenue",
+      "otherCurrentLiabilities",
+      "totalCurrentLiabilities",
+      "longTermDebt",
+      "deferredRevenueNonCurrent",
+      "deferredTaxLiabilitiesNonCurrent",
+      "otherNonCurrentLiabilities",
+      "totalNonCurrentLiabilities",
+      "otherLiabilities",
+      "capitalLeaseObligations",
+      "totalLiabilities",
+      "preferredStock",
+      "commonStock",
+      "retainedEarnings",
+      "accumulatedOtherComprehensiveIncomeLoss",
+      "othertotalStockholdersEquity",
+      "totalStockholdersEquity",
+      "totalEquity",
+      "totalLiabilitiesAndStockholdersEquity",
+      "minorityInterest",
+      "totalLiabilitiesAndTotalEquity",
+      "totalInvestments",
+      "totalDebt",
+      "netDebt",
+      "link",
+      "finalLink"
+    ],
+    "additionalProperties": false
+  }
+}

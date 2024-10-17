@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string"
+      },
+      "symbol": {
+        "type": "string"
+      },
+      "calendarYear": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "growthRevenue": {
+        "type": "number"
+      },
+      "growthCostOfRevenue": {
+        "type": "number"
+      },
+      "growthGrossProfit": {
+        "type": "number"
+      },
+      "growthGrossProfitRatio": {
+        "type": "number"
+      },
+      "growthResearchAndDevelopmentExpenses": {
+        "type": "number"
+      },
+      "growthGeneralAndAdministrativeExpenses": {
+        "type": "integer"
+      },
+      "growthSellingAndMarketingExpenses": {
+        "type": "integer"
+      },
+      "growthOtherExpenses": {
+        "type": "number"
+      },
+      "growthOperatingExpenses": {
+        "type": "number"
+      },
+      "growthCostAndExpenses": {
+        "type": "number"
+      },
+      "growthInterestExpense": {
+        "type": "number"
+      },
+      "growthDepreciationAndAmortization": {
+        "type": "number"
+      },
+      "growthEBITDA": {
+        "type": "number"
+      },
+      "growthEBITDARatio": {
+        "type": "number"
+      },
+      "growthOperatingIncome": {
+        "type": "number"
+      },
+      "growthOperatingIncomeRatio": {
+        "type": "number"
+      },
+      "growthTotalOtherIncomeExpensesNet": {
+        "type": "number"
+      },
+      "growthIncomeBeforeTax": {
+        "type": "number"
+      },
+      "growthIncomeBeforeTaxRatio": {
+        "type": "number"
+      },
+      "growthIncomeTaxExpense": {
+        "type": "number"
+      },
+      "growthNetIncome": {
+        "type": "number"
+      },
+      "growthNetIncomeRatio": {
+        "type": "number"
+      },
+      "growthEPS": {
+        "type": "number"
+      },
+      "growthEPSDiluted": {
+        "type": "number"
+      },
+      "growthWeightedAverageShsOut": {
+        "type": "number"
+      },
+      "growthWeightedAverageShsOutDil": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "date",
+      "symbol",
+      "calendarYear",
+      "period",
+      "growthRevenue",
+      "growthCostOfRevenue",
+      "growthGrossProfit",
+      "growthGrossProfitRatio",
+      "growthResearchAndDevelopmentExpenses",
+      "growthGeneralAndAdministrativeExpenses",
+      "growthSellingAndMarketingExpenses",
+      "growthOtherExpenses",
+      "growthOperatingExpenses",
+      "growthCostAndExpenses",
+      "growthInterestExpense",
+      "growthDepreciationAndAmortization",
+      "growthEBITDA",
+      "growthEBITDARatio",
+      "growthOperatingIncome",
+      "growthOperatingIncomeRatio",
+      "growthTotalOtherIncomeExpensesNet",
+      "growthIncomeBeforeTax",
+      "growthIncomeBeforeTaxRatio",
+      "growthIncomeTaxExpense",
+      "growthNetIncome",
+      "growthNetIncomeRatio",
+      "growthEPS",
+      "growthEPSDiluted",
+      "growthWeightedAverageShsOut",
+      "growthWeightedAverageShsOutDil"
+    ],
+    "additionalProperties": false
+  }
+}
