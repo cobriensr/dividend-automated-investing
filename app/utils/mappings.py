@@ -102,3 +102,11 @@ insider_tran_type_list = [
 	"Z-Trust",
 	"F-InKind"
 ]
+
+# dividend category mapping
+dividend_category_mapping = {
+"Dividend Challengers": "5 - 9",
+"Dividend Contenders": "10 - 24",
+"Dividend Champions": "25 - 49",
+"Dividend Kings": "50+"
+}
