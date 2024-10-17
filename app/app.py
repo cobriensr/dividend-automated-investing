@@ -48,8 +48,7 @@ def create_app():
             logger.debug("Serving frontend for path: %s", path)
             if path != "" and os.path.exists(os.path.join(flask_app.static_folder, path)):
                 return send_from_directory(flask_app.static_folder, path)
-            else:
-                return send_from_directory(flask_app.static_folder, "index.html")
+            return send_from_directory(flask_app.static_folder, "index.html")
 
         logger.info("Finished create_app()")
         return flask_app
