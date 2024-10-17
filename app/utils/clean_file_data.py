@@ -50,33 +50,23 @@ def get_dividend_category(years, category_mapping):
 def categorize_dividend(years):
     return get_dividend_category(years, dividend_category_mapping)
 
-# estimate the standard deviation of DGR
-def estimate_dgr_std_dev(dgr_1y, dgr_3y, dgr_5y):
-    """
-    Estimate the standard deviation of DGR using 1-year, 3-year, and 5-year growth rates.
-    
-    :param dgr_1y: 1-year Dividend Growth Rate
-    :param dgr_3y: 3-year Dividend Growth Rate
-    :param dgr_5y: 5-year Dividend Growth Rate
-    :return: Estimated standard deviation of DGR
-    """
-    # Convert percentages to decimals if necessary
-    dgr_1y = dgr_1y / 100 if dgr_1y > 1 else dgr_1y
-    dgr_3y = dgr_3y / 100 if dgr_3y > 1 else dgr_3y
-    dgr_5y = dgr_5y / 100 if dgr_5y > 1 else dgr_5y
-    
-    # Create an estimated series of annual growth rates
-    estimated_series = [
-        dgr_1y,
-        dgr_3y,
-        dgr_3y,
-        dgr_5y,
-        dgr_5y
-    ]
-    
-    # Calculate the standard deviation
-    return np.std(estimated_series) * 100
+# Estimate the standard deviation of the DGR
+def calculate_dgr_cv(dgr_1y, dgr_3y, dgr_5y):
+    estimated_series = [dgr_1y, dgr_3y, dgr_3y, dgr_5y, dgr_5y]
+    std_dev = np.std(estimated_series)
+    mean = np.mean(estimated_series)
+    return (std_dev / mean) * 100 if mean != 0 else float('inf')
 
+# Estimate the standard deviation of the DGR
+def categorize_dgr_volatility(cv):
+    if cv < 20:
+        return "Low Volatility"
+    elif 20 <= cv < 50:
+        return "Medium Volatility"
+    else:
+        return "High Volatility"
+
+# Define chowder number criteria
 def meets_chowder_criteria(row):
     yield_threshold = 3.0
     high_yield_chowder = 12
@@ -87,9 +77,13 @@ def meets_chowder_criteria(row):
     return row['Chowder Number'] >= low_yield_chowder
 
 class DateTimeEncoder(json.JSONEncoder):
+    # Custom JSON encoder to handle datetime objects
     def default(self, o):
+        # Convert datetime and date objects to ISO format
         if isinstance(o, (datetime, date)):
+            # Use the ISO format without milliseconds
             return o.isoformat()
+        # Let the base class default method raise the TypeError
         return super(DateTimeEncoder, self).default(o)
 
 def dataframe_to_custom_json(df):
@@ -357,8 +351,9 @@ def clean_and_save_file(file, upload_folder):
                 # Calculating 5-Year EPS CAGR from PEG and P/E
                 df['5-Year EPS CAGR'] = df['P/E'] / df['PEG']
                 
-                # Example usage in a DataFrame
-                df['Estimated_DGR_StdDev'] = df.apply(lambda row: estimate_dgr_std_dev(row['DGR 1Y'], row['DGR 3Y'], row['DGR 5Y']), axis=1)
+                # Calculate DGR Coefficient of Variation and Categorize DGR Volatility
+                df['DGR_CV'] = df.apply(lambda row: calculate_dgr_cv(row['DGR 1Y'], row['DGR 3Y'], row['DGR 5Y']), axis=1)
+                df['DGR_Volatility_Category'] = df['DGR_CV'].apply(categorize_dgr_volatility)
                 
                 # Convert main data to list of OrderedDicts, passing the Excel file path
                 main_data = dataframe_to_custom_json(df)
