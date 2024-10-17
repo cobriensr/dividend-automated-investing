@@ -1,18 +1,81 @@
-# pylint: disable = missing-module-docstring, missing-function-docstring, missing-final-newline, trailing-whitespace, line-too-long, missing-class-docstring
+# pylint: disable = missing-module-docstring, missing-function-docstring, missing-final-newline, trailing-whitespace, line-too-long, missing-class-docstring, invalid-name
 import os
 import json
 from datetime import datetime, date
 from collections import OrderedDict
+import logging
 import pandas as pd
 import numpy as np
 from werkzeug.utils import secure_filename
-from .fmp_api_calls import get_10_year_tbill, get_30_year_tbond, get_all_eps
+from .fmp_api_calls import get_10_year_tbill, get_30_year_tbond, get_all_eps, get_industry_pe_values, get_sector_pe_values, get_market_risk_premium
+from .mappings import industry_mapping, sector_mapping, dividend_category_mapping
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Call the API once to get the 10-year T-bill rate
 tbill_rate = get_10_year_tbill()
 
 # Call the API once to get the 30-year t-bond rate
 tbond_rate = get_30_year_tbond()
+
+# Get the industry and sector PE values
+industry_pe_dict = get_industry_pe_values()
+sector_pe_dict = get_sector_pe_values()
+
+# Get the market risk premium rate
+market_risk_premium = get_market_risk_premium()
+
+# Function to safely get PE value
+def safe_get_pe(dictionary, exchange, key):
+    return dictionary.get((exchange, key), np.nan)
+
+# parse dividend category year ranges into a string range mapping
+def parse_range(range_str):
+    """Parse a string range into a tuple of integers."""
+    if range_str.endswith('+'):
+        return (int(range_str[:-1]), float('inf'))
+    return tuple(map(int, range_str.split('-')))
+    
+# get dividend category based on years and a string range mapping
+def get_dividend_category(years, category_mapping):
+    """Determine the dividend category based on years and a string range mapping."""
+    for category, range_str in category_mapping.items():
+        start, end = parse_range(range_str)
+        if start <= years <= end:
+            return category
+    return "N/A"  # or any default category you prefer
+
+# Get dividend categories in parsed years
+def categorize_dividend(years):
+    return get_dividend_category(years, dividend_category_mapping)
+
+# estimate the standard deviation of DGR
+def estimate_dgr_std_dev(dgr_1y, dgr_3y, dgr_5y):
+    """
+    Estimate the standard deviation of DGR using 1-year, 3-year, and 5-year growth rates.
+    
+    :param dgr_1y: 1-year Dividend Growth Rate
+    :param dgr_3y: 3-year Dividend Growth Rate
+    :param dgr_5y: 5-year Dividend Growth Rate
+    :return: Estimated standard deviation of DGR
+    """
+    # Convert percentages to decimals if necessary
+    dgr_1y = dgr_1y / 100 if dgr_1y > 1 else dgr_1y
+    dgr_3y = dgr_3y / 100 if dgr_3y > 1 else dgr_3y
+    dgr_5y = dgr_5y / 100 if dgr_5y > 1 else dgr_5y
+    
+    # Create an estimated series of annual growth rates
+    estimated_series = [
+        dgr_1y,
+        dgr_3y,
+        dgr_3y,
+        dgr_5y,
+        dgr_5y
+    ]
+    
+    # Calculate the standard deviation
+    return np.std(estimated_series) * 100
 
 def meets_chowder_criteria(row):
     yield_threshold = 3.0
@@ -21,8 +84,7 @@ def meets_chowder_criteria(row):
     
     if row['Div Yield'] >= yield_threshold:
         return row['Chowder Number'] >= high_yield_chowder
-    else:
-        return row['Chowder Number'] >= low_yield_chowder
+    return row['Chowder Number'] >= low_yield_chowder
 
 class DateTimeEncoder(json.JSONEncoder):
     def default(self, o):
@@ -142,6 +204,10 @@ def clean_and_save_file(file, upload_folder):
                 else:
                     print("Warning: 'Unnamed: 24' column not found")
                 
+                # map column values from excel file to api response for industry and sector
+                df['Industry'] = df['Industry'].map(industry_mapping)
+                df['Sector'] = df['Sector'].map(sector_mapping)
+
                 # Move "Chowder Number" to the sixth position
                 if "Chowder Number" in df.columns:
                     chowder_number_col = df.pop("Chowder Number")
@@ -178,7 +244,7 @@ def clean_and_save_file(file, upload_folder):
                     axis=1
                 )
                 
-                # add eps column
+                # add eps and exchange columns
                 df = pd.merge(df, all_eps, on='Symbol', how='left')
                 
                 # create new columns for IRR and IRR Greater than T-Bond
@@ -210,7 +276,6 @@ def clean_and_save_file(file, upload_folder):
                     print("Warning: 'PE Less Half EPS Growth Rate' column not found")
                 
                 # create new column for "Growth Plus Yield By PE Less Than 2"
-                # ((EPS 1Y + Div Yield) / P/E) > 2
                 df['Growth Plus Yield By PE Less Than 2'] = ((df['EPS 1Y'] + df['Div Yield']) / df['P/E']) > 2
                 
                 # Move "Growth Plus Yield By PE Less Than 2" to the twelfth position
@@ -239,6 +304,61 @@ def clean_and_save_file(file, upload_folder):
                     df.insert(14, "PCF Ratio Less Than 10", pcf_ratio_less_than_10_col)
                 else:
                     print("Warning: 'PCF Ratio Less Than 10' column not found")
+                
+                # Apply the PE values for Sector and Industry
+                df['Industry PE'] = df.apply(lambda row: safe_get_pe(industry_pe_dict, row['Exchange'], row['Industry']), axis=1)
+                df['Sector PE'] = df.apply(lambda row: safe_get_pe(sector_pe_dict, row['Exchange'], row['Sector']), axis=1)
+                
+                # Add 'Less Than Industry PE' column
+                df['PE Less Than Industry PE'] = df['P/E'] < df['Industry PE']
+
+                # Add 'Less Than Sector PE' column
+                df['PE Less Than Sector PE'] = df['P/E'] < df['Sector PE']
+                
+                # Add 'Weighted DGR' column
+                df['Weighted DGR'] = (df['DGR 10Y'] * 0.2) + (df['DGR 5Y'] * 0.4) + (df['DGR 3Y'] * 0.3) + (df['DGR 1Y'] * 0.5)
+                
+                # Add '3Y DGR Greater Than 10Y DGR'
+                df['3Y DGR Greater Than 10Y DGR'] = df['DGR 3Y'] > df['DGR 10Y']
+                
+                # Add '1Y DGR Less Than 1Y ESP Growth Rate'
+                df['1Y DGR Less Than 1Y ESP Growth Rate'] = df['DGR 1Y'] < df['EPS 1Y']
+                
+                # Add 'Div Yield + Weighted DGR Greater Than Market Risk Rate + 10 Year T-Bill'
+                df['Div Yield + Weighted DGR Greater Than Market Risk Rate + 10 Year T-Bill'] = (df['Div Yield'] + df['Weighted DGR']) > (market_risk_premium + tbill_rate)
+                
+                # 1Y EPS Growth Greater Than Weighted DGR
+                df['1Y EPS Growth Greater Than Weighted DGR'] = df['EPS 1Y'] > df['Weighted DGR']
+                
+                # Div Yield + 1Y EPS Growth Greater Than Market Risk Rate + 10 Year T-Bill
+                df['Div Yield + 1Y EPS Growth Greater Than Market Risk Rate + 10 Year T-Bill'] = (df['Div Yield'] + df['EPS 1Y']) > (market_risk_premium + tbill_rate)
+                
+                # Rename Annualized to Annualized Dividend
+                df.rename(columns={"Annualized": "Annualized Dividend"}, inplace=True)
+                
+                # Calculate Payout Ratio
+                df['Payout Ratio'] = (df['Annualized Dividend'] / df['EPS']) * 100
+                
+                # Calculate FCF Payout Ratio
+                df['FCF Payout Ratio'] = (df['Annualized Dividend'] / df['CF/Share']) * 100
+                
+                # Calculate Dividend Coverage Ratio
+                df['Dividend Coverage Ratio'] = df['EPS'] / df['Annualized Dividend']
+                
+                # Calculate Dividend Growth Acceleration
+                df['Dividend Growth Acceleration'] = df['DGR 3Y'] - df['DGR 10Y']
+                
+                # Calculate Projected Yield on Cost
+                df['Projected Yield on Cost'] = (df['Div Yield']/100) * ((1 + (df['DGR 5Y']/100)) ** 5)
+                
+                # Return Dividend Category
+                df['Dividend Category'] = df['No Years'].apply(categorize_dividend)
+                
+                # Calculating 5-Year EPS CAGR from PEG and P/E
+                df['5-Year EPS CAGR'] = df['P/E'] / df['PEG']
+                
+                # Example usage in a DataFrame
+                df['Estimated_DGR_StdDev'] = df.apply(lambda row: estimate_dgr_std_dev(row['DGR 1Y'], row['DGR 3Y'], row['DGR 5Y']), axis=1)
                 
                 # Convert main data to list of OrderedDicts, passing the Excel file path
                 main_data = dataframe_to_custom_json(df)
@@ -277,7 +397,6 @@ def process_file(file, upload_folder):
                 "data": json.loads(json_output, object_pairs_hook=OrderedDict),
                 "message": "File processed successfully",
             }
-        else:
-            return {"success": False, "message": "Invalid file"}
+        return {"success": False, "message": "Invalid file"}
     except (ValueError, IOError, OSError, pd.errors.ParserError) as e:
         return {"success": False, "message": f"Error processing file: {str(e)}"}
