@@ -1,9 +1,17 @@
 # pylint: disable=missing-module-docstring, missing-function-docstring, missing-class-docstring, missing-final-newline, trailing-whitespace, line-too-long
 import os
+import json
 import logging
+from pathlib import Path
 from flask import Flask, send_from_directory
 from flask_cors import CORS
 from .routes import register_routes
+
+# schema directory
+SCHEMA_DIR = Path(__file__).parent / 'schemas'
+
+with open(SCHEMA_DIR / 'api_schemas.json', encoding='utf-8') as f:
+    api_schemas = json.load(f)
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
